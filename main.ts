@@ -1,9 +1,6 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    if (δύναμη != receivedNumber) {
-        music.ringTone(294)
-        basic.showString("Hello!")
-        δύναμη = receivedNumber
-    }
+    music.playTone(294, music.beat(BeatFraction.Eighth))
+    basic.showString("" + (receivedNumber))
 })
 input.onButtonPressed(Button.A, function () {
     basic.showLeds(`
@@ -14,7 +11,6 @@ input.onButtonPressed(Button.A, function () {
         . . . . .
         `)
 })
-let δύναμη = 0
 radio.setGroup(42)
 basic.showLeds(`
     . . . . .
@@ -23,7 +19,6 @@ basic.showLeds(`
     . # . . .
     . . . . .
     `)
-δύναμη = -81
 basic.forever(function () {
 	
 })
